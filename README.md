@@ -8,3 +8,8 @@
 + **git remote -v** - é usado para listar as URLs dos repositórios remotos associados ao seu repositório Git local.
 + **git fetch** - Usado para Atualizar o repositorio local.
 + **git pull** - Usado para atualizar a branch atual com as mudanças do repositório remoto.
+
+# intalar git
+Baixe o git por esse [link](https://git-scm.com/download/win).
+
+# Clonando Repositorio

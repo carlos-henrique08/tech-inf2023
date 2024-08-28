@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function multiplica(Num, Num2) {
+		 let Result = Number(Num) * Number(Num2);
+
+		 //document.write(Result);
+		 return Result;
+		}
+		
+		console.log(multiplica(3, 7));
+
+		console.log(multiplica(6, 5));
+
+		console.log(multiplica(-2, 8));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	let Num, Num2;
+	let Result, mensagem;
+
+	Num = Number(prompt("Digite o primeiro Numero: "));
+	Num2 = Number(prompt("Digite o segundo Numero: "));
+
+	Result = multiplica(Num, Num2);
+
+	mensagem = `A soma de ${Num} e ${Num2} é igual a ${Result}`;
+
+	document.writeln(mensagem);
+</script>

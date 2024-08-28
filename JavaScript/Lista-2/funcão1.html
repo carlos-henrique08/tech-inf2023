@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+	  function soma(n1, n2) {
+	   	let total = Number(n1) + Number(n2);
+
+	   	return total;
+
+	   }
+
+	   console.log(soma(4, 5));
+	   console.log(soma(10, 15));
+	   console.log(soma(-3, 7));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+	let n1, n2, total, mensagem;
+
+	n1 = Number(prompt("Digite o primeiro Numero:"));
+	n2 = Number(prompt("Digite o segundo Numero:"));
+
+	total = soma(n1, n2);
+
+	mensagem = `A soma de ${n1} e ${n2} é igual a ${total}`;
+
+	document.writeln(mensagem);
+</script>

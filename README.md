@@ -1,1 +1,1 @@
-Exercicios do curso em tecnico em informatica - SENAC Goias.
+Exercicios do curso de tecnico em informatica - SENAC Goias.

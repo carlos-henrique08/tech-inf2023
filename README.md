@@ -2,7 +2,7 @@
 
 **Comandos!!**
 
-+ ** git init** -  Usado para inicializar um novo repositório Git em um diretório.
++ **git init** -  Usado para inicializar um novo repositório Git em um diretório.
 + **git status** - para ver a sutuação do git
 + **git commit -m  "primeiro commit""** - Para criar Um git commit.
 + **git remote -v** - é usado para listar as URLs dos repositórios remotos associados ao seu repositório Git local.

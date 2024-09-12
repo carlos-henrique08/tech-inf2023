@@ -70,3 +70,10 @@ return rowToJSON(header, row)
 });
 
 }
+module.exports ={
+csvTolines,
+linesToColumns,
+extractHeader,
+extractContent,
+columnsToJSON
+};

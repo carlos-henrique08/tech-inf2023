@@ -1,15 +1,15 @@
 /**
  * - Essa função converte os dados em CSV onde cada objeto Representa uma linha.
- * @param {Strings} CSV - Uma string contendo o conteúdo de um CSV.
- * @returns {lines} - Uma lista de strings, onde cada string representa uma linha do CSV.
+ * @param {line} csvtext - Uma string contendo o conteúdo de um CSV.
+ * @returns - Uma lista de strings, onde cada string representa uma linha do CSV.
  */
-function csvTolines(Line){
-return Line.split('\n'); 
+function csvTolines(csvtext){
+return csvtext.split('\n'); 
 }
 
 /**
  * - Essa função separa os cabeçalho da linha dos dados.
- * @param {Strings} Lines - Uma lista de strings, onde cada string representa uma linha do CSV.
+ * @param {lines} Lines - Uma lista de strings, onde cada string representa uma linha do CSV.
  * @returns {row} - Uma lista de listas, onde cada lista interna contém as colunas de uma linha do CSV.
  */
 function linesToColumns(Lines) {
@@ -23,7 +23,7 @@ return Columns;
 
 /**
  * - Essa função extrai o cabeçalho e mostra.
- * @param {Strings} Header - Uma lista de listas de strings, onde cada lista interna representa colunas de uma linha
+ * @param {rows} Header - Uma lista de listas de strings, onde cada lista interna representa colunas de uma linha
 do CSV.
  * @returns r - Uma lista contendo apenas o cabeçalho (primeira linha).
  */
@@ -33,7 +33,7 @@ return Header[0];
 
 /**
  *  - Essa função extrai as informações e mostra somente os dados e não mostra o cabeçalho.
- * @param {String} columns - Uma lista de listas de strings, onde cada lista interna representa colunas de uma linha
+ * @param {content} columns - Uma lista de listas de strings, onde cada lista interna representa colunas de uma linha
 do CSV.
  * @returns 
  */
@@ -44,7 +44,7 @@ function  extractContent(columns) {
 
 /**
  *  - Essa função organizar as informações em seus respectivos parametro.
- * @param {String} Header - Duas listas de mesmo tamanho: A primeira lista representa o cabeçalho da tabela.
+ * @param {cabeçalho} Header - Duas listas de mesmo tamanho: A primeira lista representa o cabeçalho da tabela.
  * @param {*} row - A segunda lista representa uma única linha do conteúdo da tabela. 
  * @returns - Um objeto JSON onde as chaves são os elementos do cabeçalho e os valores são os elementos
 correspondentes da linha do conteúdo.
@@ -59,8 +59,8 @@ return obj;
 
 /**
  * 
- * @param {*} header - Uma lista de strings representando o cabeçalho
- * @param {*} content - uma lista de listas representando o conteúdo do CSV
+ * @param {key} header - Uma lista de strings representando o cabeçalho
+ * @param {value} content - uma lista de listas representando o conteúdo do CSV
  * @returns -  Uma lista de objetos JSON, onde as chaves são os elementos do cabeçalho e os valores são as
 colunas correspondentes.
  */

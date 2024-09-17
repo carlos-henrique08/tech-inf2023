@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baralho Truco</title>
+    <link rel="stylesheet" href="../Lista-6/estilo.css">
+</head>
+<body>
+    <main>
+        <div class="navbar">
+         <div class="info">
+           Cartas restantes:
+           <span id="remaining" class="info">0</span>    
+        </div>
+        <div class="info">
+            Deck ID:
+            <span id="deck_id" class="info">_</span>
+        </div>
+        </div>
+        <div class="mesa">
+          <div class="cartas" id="carta1"></div>
+          <div class="cartas" id="carta2"></div>
+          <div class="cartas" id="carta3"></div>
+        </div>    
+        <div class="painel">
+           <button class="botoes">Embralhar</button>
+           <button class="botoes" onclick="mostrarCartas()">Mostrar</button>
+           <button class="botoes" onclick="reembaralhar()">Reembaralhar</button>
+        </div>
+    </main>
+    <script>  
+   function reembaralhar(){
+    fetch("https://deckofcardsapi.com/api/deck/w40ojcx5q3tm/shuffle/?remaining=true")
+    .then (function(respostaAPI){
+        const json = respostaAPI.json();
+        return json;
+        console.log(jsonData);  
+    }).then(function(jsonData){
+        const cards = jsonData.cards;
+    })
+   }
+      function mostrarCartas(){
+       fetch("https://deckofcardsapi.com/api/deck/w40ojcx5q3tm/draw/?count=3")
+       .then(function(respostaAPI){
+            const json = respostaAPI.json();
+            return json;
+        }).then(function(jsonData){
+            const cards = jsonData.cards;
+        })
+         //CArta 01....
+            const card1 = document.getElementById('carta1');
+            const img = document.createElement('img');
+            img.setAttribute('src', cards[0].image);
+            card1.append(img);
+
+         //CARTA2.....            
+            const card2 = document.getElementById('carta2');
+            const img2 = document.createElement('img');
+            img2.setAttribute('src', cards[1].image);
+            card2.append(img2);
+
+         //CARTA3.....   
+            const card3 = document.getElementById('carta3');
+            const img3 = document.createElement('img');
+            img3.setAttribute('src', cards[2].image);
+            card3.append(img3);
+
+            return cards;
+        }
+       
+         
+
+
+    </script>
+
+</body>
+</html>

@@ -31,7 +31,7 @@
     </main>
     <script>  
    function reembaralhar(){
-    fetch("https://deckofcardsapi.com/api/deck/w40ojcx5q3tm/shuffle/?remaining=true")
+    fetch("https://deckofcardsapi.com/api/deck/ebf0kr1tqvw9/shuffle/?remaining=true")
     .then (function(respostaAPI){
         const json = respostaAPI.json();
         return json;
@@ -41,30 +41,39 @@
     })
    }
       function mostrarCartas(){
-       fetch("https://deckofcardsapi.com/api/deck/w40ojcx5q3tm/draw/?count=3")
+      fetch("https://deckofcardsapi.com/api/deck/ebf0kr1tqvw9/draw/?count=3")
        .then(function(respostaAPI){
             const json = respostaAPI.json();
             return json;
         }).then(function(jsonData){
             const cards = jsonData.cards;
         })
+
+        for(let i = 0; i<3; i++){
+            const id = 'carta$(i+1)';
+        }
          //CArta 01....
-            const card1 = document.getElementById('carta1');
-            const img = document.createElement('img');
-            img.setAttribute('src', cards[0].image);
-            card1.append(img);
+            const card = document.getElementById(id);
+            let img = card.querySelector('img');
+
+            if(img==null){
+                img = document.createElement('img')
+            }
+
+            img.setAttribute('src', cards[i].image);
+            card.append(img);
 
          //CARTA2.....            
-            const card2 = document.getElementById('carta2');
-            const img2 = document.createElement('img');
-            img2.setAttribute('src', cards[1].image);
-            card2.append(img2);
+           // const card2 = document.getElementById('carta2');
+           // const img2 = document.createElement('img');
+           // img2.setAttribute('src', cards[1].image);
+           // card2.append(img2);
 
          //CARTA3.....   
-            const card3 = document.getElementById('carta3');
-            const img3 = document.createElement('img');
-            img3.setAttribute('src', cards[2].image);
-            card3.append(img3);
+            //const card3 = document.getElementById('carta3');
+            //const img3 = document.createElement('img');
+            //img3.setAttribute('src', cards[2].image);
+            //card3.append(img3);
 
             return cards;
         }

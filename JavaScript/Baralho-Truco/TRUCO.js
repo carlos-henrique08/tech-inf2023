@@ -1,3 +1,7 @@
+let Deck_id = "ngifly5ann4s";
+
+
+
 function getJsonData(respostaAPI){
     const json = respostaAPI.json();
     return json;    
@@ -38,7 +42,7 @@ function puxarCrtas(jsonData){
 }
 
 function Reembaralhar(){
-fetch("https://deckofcardsapi.com/api/deck/eeznafetexr3/shuffle/?remaining=false")
+fetch(`https://deckofcardsapi.com/api/deck/${Deck_id}/shuffle/?remaining=false`)
 .then(getJsonData)
 .then(function(jsonData){
     console.log = (jsonData);
@@ -50,9 +54,19 @@ fetch("https://deckofcardsapi.com/api/deck/eeznafetexr3/shuffle/?remaining=false
 }         
 
 function olharCartas(){
-fetch("https://deckofcardsapi.com/api/deck/eeznafetexr3/draw/?count=3")
+fetch(`https://deckofcardsapi.com/api/deck/${Deck_id}/draw/?count=3`)
 .then(getJsonData)
 .then(atualizainfo)
 .then(puxarCrtas)
    
+}
+
+function NVDeck(){
+    fetch("https://deckofcardsapi.com/api/deck/ngifly5ann4s/shuffle/?cards=JS,JD,JC,JH,QS,QD,QC,QH,KS,KD,KC,KH,AS,AD,AC,AH,2S,2D,2C,2H,3S,3D,3C,3H,7D,4C,7H")
+    .then (getJsonData)
+    .then (atualizainfo)
+    .then(function(jsonData){
+        Deck_id = jsonData.Deck_id;
+        return jsonData;
+    })
 }

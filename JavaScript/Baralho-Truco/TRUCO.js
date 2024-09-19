@@ -1,7 +1,5 @@
 let Deck_id = "ngifly5ann4s";
 
-
-
 function getJsonData(respostaAPI){
     const json = respostaAPI.json();
     return json;    

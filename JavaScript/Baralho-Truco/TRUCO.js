@@ -59,7 +59,7 @@ function Deck(Deck_id){
     function puxarCrtas(jsonData){
         const cards = jsonData.cards;
         
-        for (let i=0; i<3; i++){
+        for(let i=0; i<3; i++){
         const id = `carta${i+1}`;
         
         const card = document.getElementById(id);

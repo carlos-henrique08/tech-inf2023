@@ -6,7 +6,7 @@ function Deck(Deck_id){
  this.Deck_id = Deck_id;
  let listOfCards = "JS,JD,JC,JH,QS,QD,QC,QH,KS,KD,KC,KH,AS,AD,AC,AH,2S,2D,2C,2H,3S,3D,3C,3H,7D,4C,7H"
 
-
+/*Metodos */   
  this.olharCartas = function(){
   fetch(`https://deckofcardsapi.com/api/deck/${Deck_id}/draw/?count=3`)
     .then(getJsonData)
@@ -36,6 +36,7 @@ function Deck(Deck_id){
     })
 
     }
+ /* Metodo Privados */
     function getJsonData(respostaAPI){
         const json = respostaAPI.json();
         return json;    
